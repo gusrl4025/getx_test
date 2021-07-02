@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_test/src/pages/named/first.dart';
 import 'package:getx_test/src/pages/normal/first.dart';
 
 class Home extends StatelessWidget {
@@ -24,6 +25,13 @@ class Home extends StatelessWidget {
                 //   )
                 // );
                 Get.to(() => FirstPage());
+              },
+            ),
+            RaisedButton(
+              child: Text("Named 라우트"),
+              onPressed: () {
+                //Navigator.of(context).pushNamed("/first");
+                Get.toNamed("/first");
               },
             ),
           ],

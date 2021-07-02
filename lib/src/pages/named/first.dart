@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_test/src/pages/normal/second.dart';
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({Key key}) : super(key: key);
+
+class FirstNamedPage extends StatelessWidget {
+  const FirstNamedPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("First Page"),
+        title: Text("First Named Page"),
       ),
       body: Center(
         child: Column(
@@ -18,12 +18,8 @@ class FirstPage extends StatelessWidget {
             RaisedButton(
               child: Text("다음페이지 이동"),
               onPressed: () {
-                Navigator.of(context).pop(
-                  MaterialPageRoute(
-                    builder: (_) => SecondPage(),
-                  )
-                );
-                //Get.to(() => SecondPage());
+                //Navigator.of(context).popAndPushNamed("/second");
+                Get.offNamed("/second");
               },
             ),
           ],
