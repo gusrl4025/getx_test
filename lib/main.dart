@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:getx_test/src/home.dart';
 import 'package:getx_test/src/pages/named/first.dart';
 import 'package:getx_test/src/pages/named/second.dart';
+import 'package:getx_test/src/pages/next.dart';
+import 'package:getx_test/src/pages/user.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         GetPage(name:"/", page: () => Home(), transition: Transition.zoom),
         GetPage(name:"/first", page: () => FirstNamedPage(), transition: Transition.zoom),
         GetPage(name:"/second", page: () => SecondNamedPage(), transition: Transition.zoom),
+        GetPage(name:"/next", page: () => NextPage(), transition: Transition.zoom),
+        GetPage(name:"/user/:uid", page: () => UserPage(), transition: Transition.zoom),
       ],
     );
   }

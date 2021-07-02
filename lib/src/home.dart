@@ -34,9 +34,31 @@ class Home extends StatelessWidget {
                 Get.toNamed("/first");
               },
             ),
+            RaisedButton(
+              child: Text("Arguments 전달"),
+              onPressed: () {
+                //Get.to(FirstPage(), arguments: "안녕");
+                //Get.toNamed("/next", arguments: {"name":"dizzi", "age":25});
+                Get.toNamed("/next", arguments: User(
+                  name: "dizzi", age: 25,
+                ));
+              }
+            ),
+            RaisedButton(
+              child: Text("동적 url"),
+              onPressed: () {
+                Get.toNamed("/user/28357?name=dizzi&age=25");
+              },
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+class User {
+  String name;
+  int age;
+  User({this.name, this.age});
 }
