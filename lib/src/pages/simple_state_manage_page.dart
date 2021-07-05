@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:getx_test/src/pages/controller/count_controller_with_provider.dart';
+import 'package:getx_test/src/pages/state/with_getx.dart';
+import 'package:getx_test/src/pages/state/with_provider.dart';
+import 'package:provider/provider.dart';
 
 class SimpleStateManagePage extends StatelessWidget {
   const SimpleStateManagePage({Key key}) : super(key: key);
@@ -13,14 +17,17 @@ class SimpleStateManagePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Expanded(
+              child: WithGetX(),
+            ),
+            Expanded(
+              child: ChangeNotifierProvider<CountControllerWithProvider>(
+                create: (_) => CountControllerWithProvider(),
+                child: WithProvider(),
+              ),
+            ),
             Text(
               ""
-            ),
-            RaisedButton(
-              child: Text(
-                "+",
-                style: TextStyle(fontSize: 30)
-              ),
             ),
           ],  
         ),
