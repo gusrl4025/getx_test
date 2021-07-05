@@ -11,7 +11,7 @@ class WithProvider extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Provider", style: TextStyle(fontSize: 50)),
+          Text("Provider", style: TextStyle(fontSize: 30)),
           Consumer<CountControllerWithProvider>(
             builder: (
               _, snapshot, child) {
